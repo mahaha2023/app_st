@@ -21,7 +21,7 @@ Which one is the best?
 
 dataset_name = st.sidebar.selectbox(
     'Select Dataset',
-    ('Iris', 'Breast Cancer', 'Wine')
+    ('Diabetes', 'Breast Cancer', 'Wine')
 )
 
 st.write(f"## {dataset_name} Dataset")
@@ -34,7 +34,7 @@ classifier_name = st.sidebar.selectbox(
 def get_dataset(name):
     data = None
     if name == 'Iris':
-        data = datasets.load_iris()
+        data = datasets.load_diabetes()
     elif name == 'Wine':
         data = datasets.load_wine()
     else:
