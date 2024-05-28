@@ -12,7 +12,7 @@ from sklearn.ensemble import RandomForestClassifier
 
 from sklearn.metrics import accuracy_score
 
-st.title('Streamlit Example')
+st.title('Machine Learning')
 
 st.write("""
 # Explore different classifier and datasets
@@ -21,7 +21,7 @@ Which one is the best?
 
 dataset_name = st.sidebar.selectbox(
     'Select Dataset',
-    ('Diabetes', 'Breast Cancer', 'Wine')
+    ('Diabetes', 'Breast Cancer', 'Wine quality')
 )
 
 st.write(f"## {dataset_name} Dataset")
@@ -58,7 +58,7 @@ def add_parameter_ui(clf_name):
     else:
         max_depth = st.sidebar.slider('max_depth', 2, 15)
         params['max_depth'] = max_depth
-        n_estimators = st.sidebar.slider('n_estimators', 1, 100)
+        n_estimators = st.sidebar.slider('n_estimators', 50, 150)
         params['n_estimators'] = n_estimators
     return params
 
